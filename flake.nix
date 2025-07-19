@@ -1,10 +1,8 @@
 {
   description = "A collection of flake templates";
 
-  outputs = { self }: {
-
+  outputs = {self}: {
     templates = {
-
       trivial = {
         path = ./trivial;
         description = "A very basic flake";
@@ -12,6 +10,11 @@
 
       simpleContainer = {
         path = ./simple-container;
+        description = "A NixOS container running apache-httpd";
+      };
+
+      uv = {
+        path = ./uv;
         description = "A NixOS container running apache-httpd";
       };
 
@@ -30,6 +33,16 @@
         description = "Rust template, using Naersk";
       };
 
+      rust-nightly = {
+        path = ./rust-nigthly;
+        description = "Rust template, using Naersk nigthly";
+      };
+
+      java = {
+        path = ./javafx23;
+        description = "Java template, using java23 and javafx";
+      };
+
       bash-hello = {
         path = ./bash-hello;
         description = "An over-engineered Hello World in bash";
@@ -42,7 +55,7 @@
 
       ruby = {
         path = ./ruby;
-        description = "Flake for building ruby gems" ;
+        description = "Flake for building ruby gems";
         welcomeText = ''
           # Simple Ruby Gem Template
           ## Intended usage
@@ -160,6 +173,5 @@
     };
 
     defaultTemplate = self.templates.trivial;
-
   };
 }
