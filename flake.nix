@@ -9,7 +9,7 @@
     self,
     nixpkgs,
     ...
-  } @ inputs: {
+  }: {
     templates = {
       inherit
         (nixpkgs.templates)
